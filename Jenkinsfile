@@ -21,13 +21,13 @@ pipeline {
          stage('push repo to remote host') {
             steps {
                 echo 'connect to remote host and pull down the latest version'
-                sh ' ssh -i "/var/lib/jenkins/key1.pem" -o StrictHostKeyChecking=no ec2-user@16.171.5.189 sudo git -C /var/www/html pull https://github.com/JakubBaran1/DevOps.git'
+                sh ' ssh -i "/var/lib/jenkins/key1.pem" -o StrictHostKeyChecking=no ec2-user@16.171.129.237 sudo git -C /var/www/html pull https://github.com/JakubBaran1/DevOps.git'
             }
         }
         stage('Check website is up') {
             steps {
                 echo 'Check website is up'
-                sh 'curl -Is 16.171.5.189 | head -n 1'
+                sh 'curl -Is 16.171.129.237 | head -n 1'
             }
         }
     }
