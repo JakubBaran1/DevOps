@@ -6,7 +6,7 @@ pipeline {
                 echo 'clone the repo'
                 sh 'rm -fr html'
                 sh 'rm -fr DevOps'
-                sh 'git clone https://github.com/JakubBaran1/DevOps.git'
+                sh 'git clone https://github.com/z3r0tru5t/DevOps.git'
             }
         }
         stage('Debug SSH') {
@@ -21,7 +21,7 @@ pipeline {
          stage('push repo to remote host') {
             steps {
                 echo 'connect to remote host and pull down the latest version'
-                sh ' ssh -i "/var/lib/jenkins/key1.pem" -o StrictHostKeyChecking=no ec2-user@16.171.129.237 sudo git -C /var/www/html pull https://github.com/JakubBaran1/DevOps.git'
+                sh ' ssh -i "/var/lib/jenkins/key1.pem" -o StrictHostKeyChecking=no ec2-user@16.171.129.237 sudo git -C /var/www/html pull https://github.com/z3r0tru5t/DevOps.git'
             }
         }
         stage('Check website is up') {
