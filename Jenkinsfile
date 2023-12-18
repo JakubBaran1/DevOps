@@ -34,7 +34,7 @@ pipeline {
             steps {
                 echo 'Running Unit Tests'
                 // Add commands to execute unit tests
-                sh 'npm install' // Example command for Node.js projects
+                sh 'yum install npm ' // Example command for Node.js projects
                 sh 'npm test' // Example command to run unit tests
             }
         }
