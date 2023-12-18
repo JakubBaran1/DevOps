@@ -30,5 +30,13 @@ pipeline {
                 sh 'curl -Is 16.171.193.95 | head -n 1'
             }
         }
+        stage('Run Unit Tests') {
+            steps {
+                echo 'Running Unit Tests'
+                // Add commands to execute unit tests
+                sh 'npm install' // Example command for Node.js projects
+                sh 'npm test' // Example command to run unit tests
+            }
+        }
     }
 }
