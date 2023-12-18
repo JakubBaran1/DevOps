@@ -12,9 +12,9 @@ pipeline {
         stage('Debug SSH') {
             steps {
                 script {
-                    sh 'whoami' // Print Jenkins user
-                    sh 'env' // Print environment variables for debugging
-                    // Add other debug commands or information as needed
+                    sh 'whoami'
+                    sh 'env' 
+                    
                 }
             }
         }
@@ -30,12 +30,11 @@ pipeline {
                 sh 'curl -Is 16.171.193.95 | head -n 1'
             }
         }
-        stage('Run Unit Tests') {
+        stage('Run HTML Tests') {
             steps {
-                echo 'Running Unit Tests'
-                // Add commands to execute unit tests
-                sh 'yum install npm ' // Example command for Node.js projects
-                sh 'npm test' // Example command to run unit tests
+                echo 'Running HTML Tests'
+                
+                sh 'curl -s 16.171.193.95 | grep "DevOps"' 
             }
         }
     }
